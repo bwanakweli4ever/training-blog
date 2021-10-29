@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/','blog@blog');
+Route::get('blog','blog@blog');
+Route::get('new/post','blog@showform');
+Route::post('submit/post','blog@savePost');
+Route::get('delete/post/{id}','HomeController@detelePost');
+Route::get('edit/post/{id}','HomeController@editPost');
+Route::post('perform/update','HomeController@performUpdate');
+Route::resource('blog/api','BlogAPI');
+

@@ -13,7 +13,7 @@
 </symbol>
 </defs>
 </svg>
-
+@foreach($posts as $post)
 <div class="blog-container">
   
   <div class="blog-header">
@@ -25,7 +25,7 @@
   </div>
 
   <div class="blog-body">
-    @foreach($posts as $post)
+    
     <div class="blog-title">
       <h1><a href="#">{{$post->title}}</a></h1>
     </div>
@@ -54,11 +54,11 @@
       <li class="shares"><a href="#"><svg class="icon-star"><use xlink:href="#icon-star"></use></svg><span class="numero">1</span></a></li>
     </ul>
   </div>
-@endforeach
+
 
 </div>
 
-
+@endforeach
 
 
 <script type="text/javascript" src="//use.typekit.net/wtt0gtr.js"></script>
